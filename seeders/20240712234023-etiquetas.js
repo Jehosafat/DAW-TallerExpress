@@ -12,14 +12,13 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    let etiquetas = ['foto', 'payaso', 'rojo', 'azul','techo', 'cielo',
-      'foco', 'luz']
+    let etiquetas = ['foto', 'payaso', 'rojo', 'azul','techo', 'cielo', 'foco', 'luz']
       for(let etiqueta of etiquetas) {
-      await queryInterface.bulkInsert('etiquetas', [{
-      texto: etiqueta,
-      createdAt: new Date(),
-      updatedAt: new Date()
-      }], {});
+        await queryInterface.bulkInsert('productos', [{
+          texto: etiqueta,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }], {});
       }
   },
 

@@ -14,20 +14,20 @@ module.exports = {
       name: 'foto_id_fk',
       type: 'foreign key',
       references: {
-      table: 'fotos',
-      field: 'id'
+        table: 'fotos',
+        field: 'id'
       },
       onDelete: 'cascade',
       onUpdate: 'set null'
-      });
-      
-      await queryInterface.addConstraint('fotoetiquetas', {
+    });
+    
+    await queryInterface.addConstraint('fotoetiquetas', {
       fields: ['etiqueta_id'],
       name: 'etiqueta_id_fk',
       type: 'foreign key',
       references: {
-      table: 'etiquetas',
-      field: 'id'
+        table: 'etiquetas',
+        field: 'id'
       },
       onDelete: 'cascade',
       onUpdate: 'set null'
