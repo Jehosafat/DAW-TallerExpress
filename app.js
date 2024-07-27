@@ -24,7 +24,11 @@ app.use('/users', usersRouter);
 
 /* Agregue la referencia al manejador de rutas ’./routes/fotos’ */
 var fotosRouter = require('./routes/fotos');
-app.use('/fotos', fotosRouter);
+app.use('/fotos', fotosRouter); // Para vistas
+
+var fotosApiRouter = require('./routes/rest/fotos')
+app.use('/rest/fotos', fotosApiRouter); // Para API REST
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

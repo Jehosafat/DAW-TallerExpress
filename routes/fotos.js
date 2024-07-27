@@ -21,7 +21,7 @@ router.get('/findAllById/:id/json', function(req,res,next){
         res.json(fotos);
     }).catch(error =>
         res.status(400).send(error))
-})
+});
 
 router.get('/findAllById/:id/view', function(req, res, next) {
     let id = parseInt(req.params.id);
@@ -57,12 +57,10 @@ router.get('/findAllByRate/json', function(req,res,next){
         where: {calificacion: {[Op.between]: [lower, higher]}}
     }).then(fotos => {
         res.json(fotos);
-    }).catch(error =>
-        res.status(400).send(error))
-    })
+    }).catch(error => res.status(400).send(error))
+});
 
-router.get('/findAll/json',
-    function(req, res, next) {
+router.get('/findAll/json', function(req, res, next) {
         Foto.findAll({
             attributes: { exclude: ["updatedAt"] },
             include: [{
